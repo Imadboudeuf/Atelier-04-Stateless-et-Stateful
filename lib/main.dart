@@ -26,7 +26,6 @@ class _MyWidgetState extends State<MyWidget> {
               const SizedBox(height: 20),
 
               Text("La valeur du compteur est : $compteur"),
-
               const SizedBox(height: 20),
 
               ElevatedButton(
@@ -36,6 +35,44 @@ class _MyWidgetState extends State<MyWidget> {
                   });
                 },
                 child: const Text("Incrémenter"),
+              ),
+
+              const SizedBox(height: 20),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        compteur--;
+                      });
+                    },
+                    child: const Text("-"),
+                  ),
+
+                  const SizedBox(width: 10),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        compteur = 0;
+                      });
+                    },
+                    child: const Text("Réinitialiser"),
+                  ),
+
+                  const SizedBox(width: 10),
+
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        compteur++;
+                      });
+                    },
+                    child: const Text("+"),
+                  ),
+                ],
               ),
             ],
           ),
